@@ -135,9 +135,33 @@ header {
   transform: scale(3.0) translate(2%, 15%);
 }
 
+#ascii-name {
+  width: 108mm;
+  height: auto;
+  margin-bottom: 6.4mm;
+}
+
 header>.box {
   flex: 1;
   width: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+header>.box>.subtitle {
+  font-size: 15pt;
+  margin-bottom: 7mm;
+  text-align: center;
+}
+
+header>.box>.entry {
+  font-size: 12pt;
+  margin-bottom: 5.8mm;
+}
+
+header>.box>div>.entry {
+  font-size: 8pt;
+  margin-bottom: 6.2mm;
 }
 
 main {
