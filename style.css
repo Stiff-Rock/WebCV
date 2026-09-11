@@ -1,0 +1,219 @@
+:root {
+  --bg-color: #22262E;
+  --bg-padding: 5mm;
+
+  --box-spacing: 5mm;
+  --box-bg-color: #2E3440;
+
+  --box-x-padding: 4.4mm;
+  --box-y-padding: 4.2mm;
+  --box-content-padding: 4.1mm;
+
+  --box-border-size: 3pt;
+  --box-border-radius: 7pt;
+  --box-border-color: #5B6A98;
+
+  --box-title-margin: 10pt;
+  --box-title-size: 12pt;
+  --box-title-color: #EE73BA;
+
+  --text-size: 9pt;
+  --icon-size: 18pt;
+
+  --subtitle-margin: 5pt;
+  --subtitle-color: #F2AF68;
+
+  --entry-color: #A3FFFF;
+  --entry-desc-color: #E9E9E5;
+  --entry-date-color: #AC88E2;
+}
+
+html * {
+  font-family: 'CaskaydiaCove Nerd Font';
+}
+
+.a4-page {
+  background: var(--bg-color);
+}
+
+.a4-page>* {
+  color: white;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  background: var(--box-bg-color);
+  border: var(--box-border-size) solid var(--box-border-color);
+  padding: var(--box-y-padding) var(--box-x-padding);
+  border-radius: var(--box-border-radius);
+}
+
+/* Los entry al estar algunos en un div, el div entero no tiene le margin left*/
+.box-content .subtitle,
+.entry,
+.entry-date {
+  margin-left: var(--box-content-padding);
+}
+
+.box::before,
+.box::after {
+  font-size: var(--box-title-size);
+  color: var(--box-title-color);
+}
+
+.box[data-tag]::before {
+  content: "</" attr(data-tag) ">";
+  margin-bottom: var(--box-title-margin);
+}
+
+.box[data-tag]::after {
+  content: "</" attr(data-tag) ">";
+  margin-top: var(--box-title-margin);
+}
+
+
+.subtitle {
+  font-size: var(--text-size);
+  font-weight: bold;
+  color: var(--subtitle-color);
+  display: block;
+  margin-bottom: var(--subtitle-margin);
+}
+
+
+.entry,
+.entry-desc,
+.entry-date {
+  width: fit-content;
+  font-size: var(--text-size);
+}
+
+.entry {
+  font-weight: bold;
+  color: var(--entry-color);
+}
+
+.icon {
+  color: var(--entry-color);
+  width: 30mm;
+  height: 30mm;
+  align-self: center;
+  justify-self: centerº;
+}
+
+.entry-desc {
+  color: var(--entry-desc-color);
+}
+
+.entry-date {
+  color: var(--entry-date-color);
+}
+
+header {
+  display: flex;
+  margin-bottom: var(--box-spacing);
+}
+
+#pfp-container {
+  border-radius: 50%;
+  width: 70mm;
+  height: 70mm;
+  border: var(--box-border-size) solid var(--box-border-color);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: var(--box-spacing)
+}
+
+#pfp-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(3.0) translate(2%, 15%);
+}
+
+header>.box {
+  flex: 1;
+  width: auto;
+}
+
+main {
+  display: grid;
+  grid-gap: var(--box-spacing);
+  grid-template-columns: 65mm 1fr;
+  margin-bottom: var(--box-spacing);
+}
+
+/* Abilities */
+main> :nth-child(1) {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  width: fit-content;
+}
+
+/*  Experience */
+main> :nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* Studies */
+main> :nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+footer {
+  display: flex;
+  margin-top: var(--box-spacing);
+}
+
+footer .box {
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+/* A4 PAGE CONFIG */
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media screen {
+  body {
+    background: #121313;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .a4-page {
+    width: 210mm;
+    height: 297mm;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    padding: var(--bg-padding);
+    margin: 20mm auto;
+  }
+}
+
+@media print {
+  body {
+    background: transparent;
+    margin: 0;
+  }
+
+  .a4-page {
+    width: 210mm;
+    height: 297mm;
+    padding: 20mm;
+    box-shadow: none;
+    margin: 0;
+  }
+}
