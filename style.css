@@ -20,7 +20,6 @@
   --text-size: 9pt;
   --icon-size: 18pt;
 
-  --subtitle-margin: 5pt;
   --subtitle-color: #F2AF68;
 
   --entry-color: #A3FFFF;
@@ -50,11 +49,13 @@ html * {
   border-radius: var(--box-border-radius);
 }
 
-/* Los entry al estar algunos en un div, el div entero no tiene le margin left*/
-.box-content .subtitle,
-.entry,
-.entry-date {
+.box-content {
+  height: 100%;
   margin-left: var(--box-content-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 4.3mm;
 }
 
 .box::before,
@@ -79,9 +80,17 @@ html * {
   font-weight: bold;
   color: var(--subtitle-color);
   display: block;
-  margin-bottom: var(--subtitle-margin);
 }
 
+.icon {
+  color: var(--entry-color);
+  vertical-align: middle;
+  font-size: var(--icon-size);
+}
+
+.ability>.entry {
+  font-weight: normal;
+}
 
 .entry,
 .entry-desc,
@@ -95,17 +104,12 @@ html * {
   color: var(--entry-color);
 }
 
-.icon {
-  color: var(--entry-color);
-  vertical-align: middle;
-  font-size: var(--icon-size);
-}
-
 .entry-desc {
   color: var(--entry-desc-color);
 }
 
 .entry-date {
+  display: block;
   color: var(--entry-date-color);
 }
 
@@ -184,6 +188,15 @@ header>.box>.subtitle {
 
 .link-container>.entry {
   margin-left: 0;
+}
+
+#projects-container {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  grid-template-rows: repeat(3, auto);
+  row-gap: 3mm;
+  column-gap: 4mm;
+  align-items: start;
 }
 
 main {
