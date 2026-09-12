@@ -97,10 +97,8 @@ html * {
 
 .icon {
   color: var(--entry-color);
-  width: 30mm;
-  height: 30mm;
-  align-self: center;
-  justify-self: centerº;
+  vertical-align: middle;
+  font-size: var(--icon-size);
 }
 
 .entry-desc {
@@ -154,14 +152,38 @@ header>.box>.subtitle {
   text-align: center;
 }
 
-header>.box>.entry {
-  font-size: 12pt;
-  margin-bottom: 5.8mm;
+
+#portfolio-link {
+  margin-bottom: 5.4mm;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-header>.box>div>.entry {
-  font-size: 8pt;
-  margin-bottom: 6.2mm;
+#portfolio-link>.entry {
+  font-size: 12pt;
+  margin-left: 0;
+}
+
+#portfolio-link>.icon {
+  font-size: 10pt;
+  width: 15.05px;
+  margin-right: 1.3mm;
+}
+
+
+#header-contacts {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 8.6mm;
+}
+
+.link-container>.icon {
+  margin-right: 2.1mm;
+}
+
+.link-container>.entry {
+  margin-left: 0;
 }
 
 main {
