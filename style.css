@@ -6,14 +6,14 @@
   --box-bg-color: #2E3440;
 
   --box-x-padding: 4.4mm;
-  --box-y-padding: 4.2mm;
-  --box-content-padding: 4.1mm;
+  --box-y-padding: 3mm;
+  --box-content-left-margin: 4.1mm;
 
   --box-border-size: 3pt;
   --box-border-radius: 7pt;
   --box-border-color: #5B6A98;
 
-  --box-title-margin: 10pt;
+  --box-title-margin: 2.5mm;
   --box-title-size: 12pt;
   --box-title-color: #EE73BA;
 
@@ -32,7 +32,16 @@ html * {
 }
 
 .a4-page {
+  display: flex;
+  flex-direction: column;
   background: var(--bg-color);
+}
+
+.a4-page>header,
+main,
+section,
+footer {
+  flex: 1;
 }
 
 .a4-page>* {
@@ -51,11 +60,11 @@ html * {
 
 .box-content {
   height: 100%;
-  margin-left: var(--box-content-padding);
+  margin-left: var(--box-content-left-margin);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  gap: 4.3mm;
+  gap: 2mm;
 }
 
 .box::before,
