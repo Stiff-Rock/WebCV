@@ -1,21 +1,29 @@
 addEventListener("DOMContentLoaded", _ => {
   let langCombo = document.getElementById("lenguage-combobox");
   let printBtn = document.getElementById("print-btn");
+  let portfolioChckbx = document.getElementById("portfolio-chckbx");
 
-  if (!langCombo || !printBtn) return;
+  if (!langCombo || !printBtn || !portfolioChckbx) return;
 
   langCombo.addEventListener("change", (event) => {
     loadTranslationSheet(event.target.value);
   });
 
   printBtn.addEventListener("click", () => {
-    alert("Selected lang: " + langCombo.value);
+    window.print()
+  });
+
+  portfolioChckbx.addEventListener('change', function() {
+    const display = this.checked ? "block" : "none";
+    document.getElementById('portfolio-link').style.display = display;
   });
 
   loadTranslationSheet(langCombo.value);
 })
 
 async function loadTranslationSheet(lang) {
+  document.title = `CV - Yago Pernas (${lang})`;
+
   try {
     const response = await fetch(`./translations/${lang}.json`)
 

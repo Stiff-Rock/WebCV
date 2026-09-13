@@ -35,6 +35,10 @@ html * {
   margin-top: 30px;
 }
 
+#portfolio-chckbx-lbl {
+  color: white;
+}
+
 .a4-page {
   width: 210mm;
   height: 297mm;
