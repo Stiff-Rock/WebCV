@@ -7,12 +7,20 @@
   <title>WebCvMaker</title>
   <link rel="icon" type="image/png" href="img/favicon.png">
   <link href="style.css" rel="stylesheet">
+  <script src="index.js"></script>
 </head>
 
-
 <body>
-  <div class="a4-page">
+  <section id="settings">
+    <select id="lenguage-combobox" name="Idioma">
+      <option value="es">Español</option>
+      <option value="en">English</option>
+    </select>
 
+    <button name="print" id="print-btn"> &nbsp;Imprimir</button>
+  </section>
+
+  <div class="a4-page">
     <header>
       <div id="pfp-container">
         <img src="img/pfp.jpg" alt="Foto del CV">
@@ -20,11 +28,11 @@
 
       <section class="box">
         <img src="img/NombreASCII.png" id="ascii-name">
-        <span class="subtitle">Desarrollador de software y videojuegos</span>
+        <span class="subtitle" data-lang-key="header.subtitle"></span>
 
         <div id="portfolio-link">
           <span class="icon"> </span>
-          <a class="entry" href="https://stiff-rock.github.io/Portfolio/">Portfolio Web</a>
+          <a class="entry" href="https://stiff-rock.github.io/Portfolio/" data-lang-key="header.portfolio-link"></a>
         </div>
 
         <div id="header-contacts">
@@ -42,133 +50,118 @@
     </header>
 
     <main>
-      <section class="box" data-tag="Habilidades">
+      <section class="box" data-lang-key="section.skills" data-tag="">
         <div class="box-content">
 
-          <div class="ability">
-            <span class="subtitle">Idiomas</span>
-            <span class="entry">Inglés C1</span>
-            <span class="entry-desc">- English Language Placement Test</span>
+          <div class="skill">
+            <span class="subtitle" data-lang-key="skills.languages.title"></span>
+            <span class="entry" data-lang-key="skills.languages.entry"></span>
+            <span class="entry-desc" data-lang-key="skills.languages.desc"></span>
           </div>
 
-          <div class="ability">
-            <span class="subtitle">Lenguajes</span>
-            <span class="entry">Rust, Java, Kotlin, C#, Dart, HTML, CSS,
-              JavaScript, TypeScript, JSON, XML, Python, Lua
-            </span>
+          <div class="skill">
+            <span class="subtitle" data-lang-key="skills.programming-langs.title"></span>
+            <span class="entry" data-lang-key="skills.programming-langs.entry"></span>
           </div>
 
-          <div class="ability">
-            <span class="subtitle">Motores y Frameworks</span>
-            <span class="entry">Unity, Godot, SpringBoot, Flutter</span>
+          <div class="skill">
+            <span class="subtitle" data-lang-key="skills.eng-frame.title"></span>
+            <span class="entry" data-lang-key="skills.eng-frame.entry"></span>
           </div>
 
-          <div class="ability">
-            <span class="subtitle">Bases de Datos</span>
-            <span class="entry">PostgreSQL, MongoDB, Oracle, H2</span>
+          <div class="skill">
+            <span class="subtitle" data-lang-key="skills.databases.title"></span>
+            <span class="entry" data-lang-key="skills.databases.entry"></span>
           </div>
 
-          <div class="ability">
-            <span class="subtitle">Sistemas y herramientas</span>
-            <span class="entry">Linux, Git, Github</span>
+          <div class="skill">
+            <span class="subtitle" data-lang-key="skills.sys-tools.title"></span>
+            <span class="entry" data-lang-key="skills.sys-tools.entry"></span>
           </div>
 
-
-          <div class="ability">
-            <span class="subtitle">Otros</span>
-            <span class="entry">
-              Redes y Servidores, Edición multimedia,
-              Producción de Audio (DAWs)
-            </span>
-          </div>
-
-
-        </div>
-      </section>
-
-      <section class="box" data-tag="Experiencia">
-        <div class="box-content">
-
-          <div class="entry-field">
-            <span class="entry">Prácticas en Canonical Robots</span>
-            <span class="entry-desc">- Laboratorio de Robótica UC3M</span>
-            <span class="entry-date">Abril 2026 - Mayo 2026</span>
-          </div>
-
-          <div class="entry-field">
-            <span class="entry">Monitor de extraescolares Activity Go Events</span>
-            <span class="entry-desc">- Laura García Noblejas</span>
-            <span class="entry-date">Septiembre 2025 - Marzo 2025</span>
-          </div>
-
-
-          <div class="entry-field">
-            <span class="entry">Prácticas en Truyol Digital S.A</span>
-            <span class="entry-desc">- Análisis de datos e IA </span>
-            <span class="entry-date">Abril 2025 - Junio 2025</span>
+          <div class="skill">
+            <span class="subtitle" data-lang-key="skills.other.title"></span>
+            <span class="entry" data-lang-key="skills.other.entry"></span>
           </div>
 
         </div>
       </section>
 
-      <section class="box" data-tag="Estudios">
+      <section class="box" data-lang-key="section.experience" data-tag="">
         <div class="box-content">
 
           <div class="entry-field">
-            <span class="entry">
-              Curso de especialización en Desarrollo de videojuegos y realidad virtual
-            </span>
-            <span class="entry-date">2025 - 2026</span>
+            <span class="entry" data-lang-key="experience.uc3m.entry"></span>
+            <span class="entry-desc" data-lang-key="experience.uc3m.desc"></span>
+            <span class="entry-date" data-lang-key="experience.uc3m.date"></span>
           </div>
 
           <div class="entry-field">
-            <span class="entry">Profesor en el proyecto Erasmus BIDUSA</span>
-            <span class="entry-desc">
-              - Machine learning y Minado de datos en
-              Estonia, Turquía e Italia
-            </span>
-            <span class="entry-date">Noviembre 2024 - Mayo 2025</span>
+            <span class="entry" data-lang-key="experience.monitor.entry"></span>
+            <span class="entry-desc" data-lang-key="experience.monitor.desc"></span>
+            <span class="entry-date" data-lang-key="experience.monitor.date"></span>
           </div>
 
           <div class="entry-field">
-            <span class="entry">
-              CFGS de Desarrollo de Aplicaciones Multiplataforma
-            </span>
-            <span class="entry-date">2023 - 2025</span>
+            <span class="entry" data-lang-key="experience.truyol.entry"></span>
+            <span class="entry-desc" data-lang-key="experience.truyol.desc"></span>
+            <span class="entry-date" data-lang-key="experience.truyol.date"></span>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="box" data-lang-key="section.education" data-tag="">
+        <div class="box-content">
+
+          <div class="entry-field">
+            <span class="entry" data-lang-key="education.specialization.entry"></span>
+            <span class="entry-date" data-lang-key="education.specialization.date"></span>
+          </div>
+
+          <div class="entry-field">
+            <span class="entry" data-lang-key="education.bidusa.entry"></span>
+            <span class="entry-desc" data-lang-key="education.bidusa.desc"></span>
+            <span class="entry-date" data-lang-key="education.bidusa.date"></span>
+          </div>
+
+          <div class="entry-field">
+            <span class="entry" data-lang-key="education.cfgs.entry"></span>
+            <span class="entry-date" data-lang-key="education.cfgs.date"></span>
           </div>
 
         </div>
       </section>
     </main>
 
-    <section class="box" data-tag="Proyectos">
+    <section class="box" data-lang-key="section.projects" data-tag="">
       <div id="projects-container">
         <div>
-          <span class="entry">■ 2° Puesto en la UEM Creative Jam</span>
-          <span class="entry-desc">- SpaceRavers</span>
-          <span class="entry-date">2025</span>
+          <span class="entry" data-lang-key="projects.creative-jam.entry"></span>
+          <span class="entry-desc" data-lang-key="projects.creative-jam.desc"></span>
+          <span class="entry-date" data-lang-key="projects.creative-jam.date"></span>
         </div>
         <div>
-          <span class="entry">■ UEM DreamJam</span>
-          <span class="entry-desc">- Earth's Blessing</span>
-          <span class="entry-date">2024</span>
-        </div>
-
-        <div>
-          <span class="entry">■ Fase Regional del Concurso Programame XIII Edición</span>
-          <span class="entry-date">2023</span>
-        </div>
-        <div>
-          <span class="entry">■ GitTaur</span>
-          <span class="entry-desc">- Cliente de GIT para Windows en Tauri</span>
+          <span class="entry" data-lang-key="projects.dream-jam.entry"></span>
+          <span class="entry-desc" data-lang-key="projects.dream-jam.desc"></span>
+          <span class="entry-date" data-lang-key="projects.dream-jam.date"></span>
         </div>
 
         <div>
-          <span class="entry">■ Sincronización de Obsidian con GitHub en TypeScript</span>
+          <span class="entry" data-lang-key="projects.programame.entry"></span>
+          <span class="entry-date" data-lang-key="projects.programame.date"></span>
         </div>
         <div>
-          <span class="entry">■ Platea</span>
-          <span class="entry-desc">- Aplicación de Java de publicación de incidencias vecinales</span>
+          <span class="entry" data-lang-key="projects.tfg.entry"></span>
+          <span class="entry-desc" data-lang-key="projects.tfg.desc"></span>
+        </div>
+
+        <div>
+          <span class="entry" data-lang-key="projects.obsidian.entry"></span>
+        </div>
+        <div>
+          <span class="entry" data-lang-key="projects.platea.entry"></span>
+          <span class="entry-desc" data-lang-key="projects.platea.desc"></span>
         </div>
       </div>
     </section>
@@ -193,6 +186,5 @@
     </footer>
   </div>
 </body>
-
 
 </html>

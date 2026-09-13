@@ -6,7 +6,7 @@
   --box-bg-color: #2E3440;
 
   --box-x-padding: 4.4mm;
-  --box-y-padding: 3mm;
+  --box-y-padding: 2mm;
   --box-content-left-margin: 4.1mm;
 
   --box-border-size: 3pt;
@@ -31,10 +31,18 @@ html * {
   font-family: 'CaskaydiaCove Nerd Font';
 }
 
+#settings {
+  margin-top: 30px;
+}
+
 .a4-page {
+  width: 210mm;
+  height: 297mm;
+  padding: var(--bg-padding);
   display: flex;
   flex-direction: column;
   background: var(--bg-color);
+  box-sizing: border-box;
 }
 
 .a4-page>header,
@@ -97,7 +105,7 @@ footer {
   font-size: var(--icon-size);
 }
 
-.ability>.entry {
+.skill>.entry {
   font-weight: normal;
 }
 
@@ -243,6 +251,7 @@ footer .box {
   width: 100%;
   flex-direction: row;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 /* A4 PAGE CONFIG */
@@ -259,28 +268,32 @@ footer .box {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
   }
 
   .a4-page {
-    width: 210mm;
-    height: 297mm;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    box-sizing: border-box;
-    padding: var(--bg-padding);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
     margin: 20mm auto;
+    margin-top: 30px;
   }
 }
 
 @media print {
+  #settings {
+    display: none;
+  }
+
+  html {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
   body {
     background: transparent;
     margin: 0;
   }
 
   .a4-page {
-    width: 210mm;
-    height: 297mm;
-    padding: 20mm;
     box-shadow: none;
     margin: 0;
   }
