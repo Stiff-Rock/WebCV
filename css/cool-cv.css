@@ -80,7 +80,7 @@ footer {
 }
 
 .box[data-tag]::before {
-  content: "</" attr(data-tag) ">";
+  content: "<" attr(data-tag) ">";
   margin-bottom: var(--box-title-margin);
 }
 
