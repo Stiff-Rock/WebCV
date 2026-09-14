@@ -27,28 +27,6 @@
   --entry-date-color: #AC88E2;
 }
 
-html * {
-  font-family: 'CaskaydiaCove Nerd Font';
-}
-
-#settings {
-  margin-top: 30px;
-}
-
-#portfolio-chckbx-lbl {
-  color: white;
-}
-
-.a4-page {
-  width: 210mm;
-  height: 297mm;
-  padding: var(--bg-padding);
-  display: flex;
-  flex-direction: column;
-  background: var(--bg-color);
-  box-sizing: border-box;
-}
-
 .a4-page>header,
 main,
 section,
@@ -56,7 +34,23 @@ footer {
   flex: 1;
 }
 
-.a4-page>* {
+#cv-container {
+  font-family: 'CaskaydiaCove Nerd Font';
+}
+
+#cv-container {
+  padding: var(--bg-padding);
+  background: var(--bg-color);
+}
+
+#cv-container>header,
+main,
+section,
+footer {
+  flex: 1;
+}
+
+#cv-container>* {
   color: white;
 }
 
@@ -256,49 +250,4 @@ footer .box {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-}
-
-/* A4 PAGE CONFIG */
-
-@page {
-  size: A4;
-  margin: 0;
-}
-
-@media screen {
-  body {
-    background: #121313;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .a4-page {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-    margin: 20mm auto;
-    margin-top: 30px;
-  }
-}
-
-@media print {
-  #settings {
-    display: none;
-  }
-
-  html {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
-
-  body {
-    background: transparent;
-    margin: 0;
-  }
-
-  .a4-page {
-    box-shadow: none;
-    margin: 0;
-  }
 }
