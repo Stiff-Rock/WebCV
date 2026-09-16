@@ -38,15 +38,13 @@
   "section.projects": "Proyectos",
   "projects.creative-jam.entry": "■ 2° Puesto en la UEM Creative Jam",
   "projects.creative-jam.desc": "- SpaceRavers",
-  "projects.creative-jam.date": "2025",
   "projects.dream-jam.entry": "■ UEM DreamJam",
   "projects.dream-jam.desc": "- Earth's Blessing",
-  "projects.dream-jam.date": "2024",
   "projects.programame.entry": "■ Fase Regional del Concurso Programame XIII Edición",
-  "projects.programame.date": "2023",
   "projects.tfg.entry": "■ GitTaur",
   "projects.tfg.desc": "- Cliente de GIT para Windows en Tauri",
-  "projects.obsidian.entry": "■ Sincronización de Obsidian con GitHub en TypeScript",
+  "projects.skit.entry": "■ Skit",
+  "projects.skit.desc": "- Videojuego de plataformas 3D hecho en Unity disponible en itch.io",
   "projects.platea.entry": "■ Platea",
   "projects.platea.desc": "- Aplicación de Java de publicación de incidencias vecinales"
 }
